@@ -1,0 +1,41 @@
+{
+  "name": "proto-graph",
+  "version": "0.1.0",
+  "description": "Create graphs from your proto dependencies",
+  "main": "./lib/api",
+  "scripts": {
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magentaqin/proto-graph.git"
+  },
+  "author": "magentaqin(qinmu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magentaqin/proto-graph/issues"
+  },
+  "homepage": "https://github.com/magentaqin/proto-graph#readme",
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lodash.merge": "^4.6.2",
+    "prettier": "^2.6.2",
+    "prettier-config-standard": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  }
+}
