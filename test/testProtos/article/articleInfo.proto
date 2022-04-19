@@ -1,0 +1,18 @@
+syntax = "proto3";
+package ProtoGraphTest;
+import "testProtos/user/userInfo.proto";
+
+message GetArticleInfoReq {
+  int32 id = 1;
+}
+
+message GetArticleInfoRes {
+  string content = 1;
+  int32 createdAt = 2;
+  int32 updatedAt = 3;
+  UserInfo author = 4;
+}
+
+service Article {
+  rpc GetArticleInfo(GetArticleInfoReq) returns (GetArticleInfoRes);
+}

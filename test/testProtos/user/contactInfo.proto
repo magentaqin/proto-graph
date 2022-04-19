@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ProtoGraphTest;
+
+message ContactInfo {
+  string email = 1;
+  string phone = 2;
+}

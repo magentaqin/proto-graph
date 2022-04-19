@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ProtoGraphTest;
+
+import "contactInfo.proto";
+
+message UserInfo {
+  string username = 1;
+  int32 age = 2;
+  string city = 3;
+  int32 gender = 4;
+  ContactInfo contactInfo = 5;
+}
