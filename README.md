@@ -1,2 +1,2 @@
 # proto-graph
-Create graphs from your proto dependencies.
+Create editable and interative graphs from your proto dependencies.

@@ -1,6 +1,6 @@
 syntax = "proto3";
 package ProtoGraphTest;
-import "testProtos/user/userInfo.proto";
+import "github.com/magentaqin/proto-graph/test/testProtos/user/userInfo.proto";
 
 message GetArticleInfoReq {
   int32 id = 1;
