@@ -1,5 +1,13 @@
 <script>
   import { onMount } from 'svelte';
+  const jsonReviver = (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (value.dataType === 'Map') {
+        return new Map(value.value);
+      }
+    }
+    return value;
+  };
   onMount(() => {
     fetch('/info', {
       method: 'POST',
@@ -7,8 +15,8 @@
         'Content-Type': 'application/json'
       }
     })
-      .then(response => response.json())
-      .then(data => console.log('sucess', data))
+      .then(response => response.text())
+      .then(data => console.log('sucess', JSON.parse(data, jsonReviver)))
       .catch(err => console.log('error', err));
     });
 </script>
