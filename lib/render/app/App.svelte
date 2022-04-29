@@ -1,13 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  const jsonReviver = (key, value) => {
-    if (typeof value === 'object' && value !== null) {
-      if (value.dataType === 'Map') {
-        return new Map(value.value);
-      }
-    }
-    return value;
-  };
+  import Rete from "rete";
+  import ConnectionPlugin from 'rete-connection-plugin';
+  import VueRenderPlugin from 'rete-vue-render-plugin';
+
   onMount(() => {
     fetch('/info', {
       method: 'POST',
@@ -18,11 +14,25 @@
       .then(response => response.text())
       .then(data => console.log('sucess', JSON.parse(data, jsonReviver)))
       .catch(err => console.log('error', err));
-    });
+  });
+
+  const jsonReviver = (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (value.dataType === 'Map') {
+        return new Map(value.value);
+      }
+    }
+    return value;
+  };
+
+  const initEditor = () => {
+
+  }
 </script>
 
 <main>
 	<p>Proto Graph Page</p>
+  <div id="rete"></div>
 </main>
 
 <style>
