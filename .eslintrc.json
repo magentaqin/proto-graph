@@ -5,12 +5,20 @@
     "sourceType": "module"
   },
   "plugins": [
-    "prettier"
+    "prettier",
+    "svelte3"
   ],
   "extends": ["eslint:recommended", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
   "rules": {
     "prettier/prettier": "error",

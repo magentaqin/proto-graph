@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import { babel } from '@rollup/plugin-babel';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
@@ -63,6 +64,7 @@ export default {
       dedupe: ['svelte']
     }),
     commonjs(),
+    babel({ babelHelpers: 'bundled' }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated

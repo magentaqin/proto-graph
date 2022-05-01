@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Rete from "rete";
-  import ConnectionPlugin from 'rete-connection-plugin';
-  import VueRenderPlugin from 'rete-vue-render-plugin';
 
   onMount(() => {
     fetch('/info', {
@@ -24,10 +21,6 @@
     }
     return value;
   };
-
-  const initEditor = () => {
-
-  }
 </script>
 
 <main>
