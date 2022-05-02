@@ -6,6 +6,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import path from 'path';
+import { less } from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 const publicDir = path.resolve(__dirname, './lib/render/public');
@@ -48,7 +49,8 @@ export default {
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production
-      }
+      },
+      preprocess: [less({})]
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance

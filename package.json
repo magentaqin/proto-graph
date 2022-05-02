@@ -31,6 +31,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-svelte3": "^3.4.1",
     "husky": "^7.0.4",
+    "less": "^4.1.2",
     "lint-staged": "^12.4.1",
     "lodash.merge": "^4.6.2",
     "prettier": "^2.6.2",
@@ -41,7 +42,8 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^2.0.0",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.10.6"
   },
   "husky": {
     "hooks": {
